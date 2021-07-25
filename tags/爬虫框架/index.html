@@ -17,14 +17,14 @@
   
   <meta property="og:type" content="website">
 <meta property="og:title" content="疏夜星稀">
-<meta property="og:url" content="http://example.com/tags/%E7%88%AC%E8%99%AB%E6%A1%86%E6%9E%B6/index.html">
+<meta property="og:url" content="https://luxuncang.github.io/tags/%E7%88%AC%E8%99%AB%E6%A1%86%E6%9E%B6/index.html">
 <meta property="og:site_name" content="疏夜星稀">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/null">
+<meta property="og:image" content="https://luxuncang.github.io/null">
 <meta property="article:author" content="ShengXin Lu">
 <meta property="article:tag" content="blog">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/null">
+<meta name="twitter:image" content="https://luxuncang.github.io/null">
 <meta name="twitter:site" content="@null">
   
   <!-- 站点验证相关 -->
@@ -143,47 +143,34 @@
             
     
     
-        <article class="kratos-hentry clearfix">
-            <div class="kratos-entry-border-new clearfix">
-                
-                    <div class="pin-top wrapper">
-                        <div class="pin-top inner"></div>
-                    </div>
-                
+        <article>
+            <div class="kratos-hentry kratos-post-inner clearfix index-post">
                 <div class="kratos-entry-thumb-new">
                     <a href="/2021/07/14/lupro/">
                         
-                            <img class="kratos-entry-thumb-new-img">
-                        
                     </a>
                 </div>
-                <div class="kratos-post-inner-new">
-                    <header class="kratos-entry-header-new">
-                            <a class="label-link" href="/categories/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/">开源项目</a>
-                        <h2 class="kratos-entry-title-new"><a href="/2021/07/14/lupro/">Lupro</a>
-                    </header>
-                    <div class="kratos-entry-content-new">
-                        <p>
-                            
-                                lupro 爬虫框架lupro是一个完全兼容requests的异步爬虫框架
-安装 Lupro使用 PyPi 安装 Lupro
-pip Find, install and publish Python packages with the...
-                            
-                        </p>
-                    </div>
-                </div>
-                <footer class="kratos-post-meta-new">
-                    <span class="pull-left">
-                        <a>
+                <header class="kratos-entry-header">
+                    <h1 class="text-center"><a class="kratos-entry-title" href="/2021/07/14/lupro/">Lupro</a></h1>
+                    
+                    <ul class="kratos-post-meta text-center">
+                        <li>
                             <i class="fa fa-calendar"></i>
                             2021-07-14
-                        </a>
-                        <a>
-                            
+                        </li>
+                        
+                            <li>
+                                <i class="fa fa-folder"></i>
+                                分类于
+                                <a class="label-link" href="/categories/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/">开源项目</a>
+                            </li>
+                        
+                        
+                            <li>
                                 <i class="fa fa-tags"></i>
                                 <a class="tag-none-link" href="/tags/python/" rel="tag">python</a>, <a class="tag-none-link" href="/tags/%E7%88%AC%E8%99%AB%E6%A1%86%E6%9E%B6/" rel="tag">爬虫框架</a>
-                            
-                        </a>
+                            </li>
+                        
                         
                             <!-- 当前仅支持valine/waline自带的统计功能 -->
                             
@@ -192,10 +179,44 @@ pip Find, install and publish Python packages with the...
                             <!-- 当前仅支持waline自带的统计功能 -->
                             
                         
-                    </span>
-                    <span class="pull-right">
-                        <a class="read-more" href="/2021/07/14/lupro/" title="阅读全文">阅读全文<i class="fa fa-chevron-circle-right"></i></a>
-                    </span>
+                    </ul>
+                </header>
+                <hr />
+                <div class="kratos-post-content">
+                    <h1 id="lupro-爬虫框架"><a href="#lupro-爬虫框架" class="headerlink" title="lupro 爬虫框架"></a>lupro 爬虫框架</h1><p><strong>lupro是一个完全兼容requests的异步爬虫框架</strong></p>
+<h2 id="安装-Lupro"><a href="#安装-Lupro" class="headerlink" title="安装 Lupro"></a>安装 <code>Lupro</code></h2><h3 id="使用-PyPi-安装-Lupro"><a href="#使用-PyPi-安装-Lupro" class="headerlink" title="使用 PyPi 安装 Lupro"></a>使用 <a target="_blank" rel="noopener" href="https://pypi.org/">PyPi</a> 安装 Lupro</h3><ul>
+<li><code>pip</code> Find, install and publish Python packages with the Python Package Index</li>
+<li><code>pip install lupro</code></li>
+</ul>
+<h2 id="开始使用"><a href="#开始使用" class="headerlink" title="开始使用"></a>开始使用</h2><ol>
+<li>导入 <code>from lupro import lupro</code></li>
+</ol>
+<h3 id="兼容requests"><a href="#兼容requests" class="headerlink" title="兼容requests"></a>兼容requests</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> lupro <span class="keyword">import</span> lupro <span class="keyword">as</span> requests</span><br></pre></td></tr></table></figure>
+
+<p><em>这样即可不用修改代码完全替换</em> <code>requests</code></p>
+<h3 id="原生lupro"><a href="#原生lupro" class="headerlink" title="原生lupro"></a>原生lupro</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> lupro <span class="keyword">import</span> lupro</span><br><span class="line">r = lupro.get(<span class="string">&#x27;https://www.python.org&#x27;</span>)</span><br><span class="line">r.status_code</span><br></pre></td></tr></table></figure>
+
+<h3 id="批量异步任务"><a href="#批量异步任务" class="headerlink" title="批量异步任务"></a>批量异步任务</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> lupro <span class="keyword">import</span> lupro,lupros,generator,Batchsubmission</span><br><span class="line"></span><br><span class="line"><span class="comment"># 请求列表</span></span><br><span class="line">url = [<span class="string">&#x27;https://www.python.org&#x27;</span>,<span class="string">&#x27;https://www.baidu.com&#x27;</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 实例化模板</span></span><br><span class="line">r = lupro(<span class="string">&#x27;test&#x27;</span>,lupros.get(<span class="string">&#x27;&#x27;</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># lupro 生成器</span></span><br><span class="line">lu = generator(r, url)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 批量任务</span></span><br><span class="line">Batchsubmission(lu)</span><br></pre></td></tr></table></figure>
+
+<h2 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h2><ul>
+<li><input checked="" disabled="" type="checkbox"> 完全继承requests</li>
+<li><input checked="" disabled="" type="checkbox"> 异步特性</li>
+<li><input checked="" disabled="" type="checkbox"> lupro生成器</li>
+<li><input checked="" disabled="" type="checkbox"> 自动编码修正</li>
+<li><input checked="" disabled="" type="checkbox"> 解析器与解析链</li>
+<li><input disabled="" type="checkbox"> 选择器与选择链</li>
+<li><input checked="" disabled="" type="checkbox"> 下载器</li>
+<li><input checked="" disabled="" type="checkbox"> 请求头生成器</li>
+<li><input disabled="" type="checkbox"> 交互式</li>
+<li><input disabled="" type="checkbox"> 微服务</li>
+</ul>
+<h2 id="api-文档"><a href="#api-文档" class="headerlink" title="api 文档"></a>api 文档</h2><p><strong>完善中</strong></p>
+
+                </div>
+                <footer class="kratos-entry-footer clearfix">
+                    <div class="post-like-donate text-center clearfix">
+                        <a class="read-more" href="/2021/07/14/lupro/#more" title="Lupro">继续阅读 <i class="fa fa-chevron-circle-right"></i></a>
+                    </div>
                 </footer>
             </div>
         </article>
@@ -242,7 +263,7 @@ pip Find, install and publish Python packages with the...
                 
   <aside id="krw-categories" class="widget widget-kratos-categories clearfix">
     <h4 class="widget-title"><i class="fa fa-folder"></i>分类目录</h4>
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/">开源项目</a><span class="category-list-count">2</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/">开源项目</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%A1%B9%E7%9B%AE%E6%8A%80%E5%B7%A7/">项目技巧</a><span class="category-list-count">1</span></li></ul>
   </aside>
 
 
@@ -251,7 +272,7 @@ pip Find, install and publish Python packages with the...
   <aside id="krw-tags" class="widget widget-kratos-tags clearfix">
     <h4 class="widget-title"><i class="fa fa-tags"></i>标签聚合</h4>
       <div class="tag-clouds">
-        <a href="/tags/python/" style="font-size: 0.8em;">python</a> <a href="/tags/%E7%88%AC%E8%99%AB%E6%A1%86%E6%9E%B6/" style="font-size: 0.6em;">爬虫框架</a> <a href="/tags/%E8%A7%A3%E6%9E%90%E5%99%A8/" style="font-size: 0.6em;">解析器</a>
+        <a href="/tags/python/" style="font-size: 0.8em;">python</a> <a href="/tags/%E7%88%AC%E8%99%AB%E6%A1%86%E6%9E%B6/" style="font-size: 0.6em;">爬虫框架</a> <a href="/tags/%E8%A7%A3%E6%9E%90%E5%99%A8/" style="font-size: 0.7em;">解析器</a>
       </div>
   </aside>
 
@@ -262,6 +283,12 @@ pip Find, install and publish Python packages with the...
   <div class="tab-content">
       <ul class="list-group">
         
+        
+          
+          
+            <a class="list-group-item" href="/2021/07/25/dtanys%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/"><i class="fa  fa-book"></i> dtanys使用技巧</a>
+            
+          
         
           
           
