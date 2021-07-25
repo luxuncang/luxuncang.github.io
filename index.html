@@ -146,6 +146,75 @@
         <article>
             <div class="kratos-hentry kratos-post-inner clearfix index-post">
                 <div class="kratos-entry-thumb-new">
+                    <a href="/2021/07/25/dtanys%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/">
+                        
+                    </a>
+                </div>
+                <header class="kratos-entry-header">
+                    <h1 class="text-center"><a class="kratos-entry-title" href="/2021/07/25/dtanys%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/">dtanys使用技巧</a></h1>
+                    
+                    <ul class="kratos-post-meta text-center">
+                        <li>
+                            <i class="fa fa-calendar"></i>
+                            2021-07-25
+                        </li>
+                        
+                            <li>
+                                <i class="fa fa-folder"></i>
+                                分类于
+                                <a class="label-link" href="/categories/%E9%A1%B9%E7%9B%AE%E6%8A%80%E5%B7%A7/">项目技巧</a>
+                            </li>
+                        
+                        
+                            <li>
+                                <i class="fa fa-tags"></i>
+                                <a class="tag-none-link" href="/tags/python/" rel="tag">python</a>, <a class="tag-none-link" href="/tags/%E8%A7%A3%E6%9E%90%E5%99%A8/" rel="tag">解析器</a>
+                            </li>
+                        
+                        
+                            <!-- 当前仅支持valine/waline自带的统计功能 -->
+                            
+                        
+                        
+                            <!-- 当前仅支持waline自带的统计功能 -->
+                            
+                        
+                    </ul>
+                </header>
+                <hr />
+                <div class="kratos-post-content">
+                    <h1 id="dtanys使用场景"><a href="#dtanys使用场景" class="headerlink" title="dtanys使用场景"></a>dtanys使用场景</h1><p>如果不熟悉语法可参考 <a target="_blank" rel="noopener" href="https://github.com/luxuncang/dtanys" title="https://github.com/luxuncang/dtanys">dtanys项目</a></p>
+<p><strong>核心语法：<code>XDict(Parsing object, Analytical syntax).edict()</code></strong></p>
+<p><code>Parsing object</code> 为 <code>list or dict or tuple</code> </p>
+<p><code>Analytical syntax</code> 为 <code>str</code></p>
+<ul>
+<li>提取所有键为 <code>k</code> 的值<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> dtanys <span class="keyword">import</span> XDict</span><br><span class="line"><span class="keyword">from</span> pprint <span class="keyword">import</span> pprint</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"></span><br><span class="line">url = <span class="string">&#x27;http://c.3g.163.com/nc/video/list/VAP4BFR16/y/0-10.html&#x27;</span></span><br><span class="line"></span><br><span class="line">res = requests.get(url,headers=&#123;<span class="string">&#x27;User-Agent&#x27;</span>:<span class="string">&quot;Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; en) Opera 9.50&quot;</span>&#125;).json()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 打印数据</span></span><br><span class="line">pprint(res)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 提取所有mp4的url</span></span><br><span class="line"><span class="built_in">print</span>(XDict(res,<span class="string">&#x27;/*mp4_url&#x27;</span>).edict())</span><br></pre></td></tr></table></figure></li>
+<li>提取对象形如 <code>iterable[dict]</code>的数据<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> dtanys <span class="keyword">import</span> XDict</span><br><span class="line"><span class="keyword">from</span> pprint <span class="keyword">import</span> pprint</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"></span><br><span class="line">test_object = [</span><br><span class="line">    &#123;<span class="string">&#x27;a&#x27;</span>: <span class="number">1</span>, <span class="string">&#x27;b&#x27;</span> : <span class="number">2</span>&#125;,</span><br><span class="line">    &#123;<span class="string">&#x27;a&#x27;</span>: <span class="number">3</span>, <span class="string">&#x27;b&#x27;</span> : <span class="number">4</span>&#125;,</span><br><span class="line">    &#123;<span class="string">&#x27;a&#x27;</span>: <span class="number">5</span>, <span class="string">&#x27;b&#x27;</span> : <span class="number">6</span>, <span class="string">&#x27;e&#x27;</span> : <span class="number">0</span>&#125;,</span><br><span class="line">    &#123;<span class="string">&#x27;a&#x27;</span>: <span class="number">7</span>, <span class="string">&#x27;b&#x27;</span> : <span class="number">8</span>&#125;,</span><br><span class="line">    &#123;<span class="string">&#x27;a&#x27;</span>: <span class="number">9</span>, <span class="string">&#x27;b&#x27;</span> : <span class="number">10</span>, <span class="string">&#x27;c&#x27;</span>: <span class="number">0</span>&#125;,</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(XDict(test_object,<span class="string">&quot;//[&#x27;a&#x27;,&#x27;b&#x27;]&quot;</span>).edict())</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>注：<code>//[&#39;k&#39;]</code> 需要添加 <code>&#39;&#39; or &quot;&quot;</code> ,且选取的键值在 <code>iterable</code> 都需要存在</p>
+<ul>
+<li>提取分形节点一致的数据<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> dtanys <span class="keyword">import</span> XDict</span><br><span class="line"><span class="keyword">from</span> pprint <span class="keyword">import</span> pprint</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"></span><br><span class="line">url = <span class="string">&#x27;http://c.3g.163.com/nc/video/list/VAP4BFR16/y/0-10.html&#x27;</span></span><br><span class="line"></span><br><span class="line">res = requests.get(url,headers=&#123;<span class="string">&#x27;User-Agent&#x27;</span>:<span class="string">&quot;Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; en) Opera 9.50&quot;</span>&#125;).json()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 打印数据</span></span><br><span class="line">pprint(res)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 提取所有alias,tid,tname,topic_icons 可排序</span></span><br><span class="line"><span class="built_in">print</span>(XDict(res,<span class="string">&quot;/VAP4BFR16//videoTopic[&#x27;tid&#x27;,&#x27;alias&#x27;,&#x27;tname&#x27;,&#x27;topic_icons&#x27;]&quot;</span>).edict())</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+<li>配合切片一起使用<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> dtanys <span class="keyword">import</span> XDict</span><br><span class="line"><span class="keyword">from</span> pprint <span class="keyword">import</span> pprint</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"></span><br><span class="line">url = <span class="string">&#x27;http://c.3g.163.com/nc/video/list/VAP4BFR16/y/0-10.html&#x27;</span></span><br><span class="line"></span><br><span class="line">res = requests.get(url,headers=&#123;<span class="string">&#x27;User-Agent&#x27;</span>:<span class="string">&quot;Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; en) Opera 9.50&quot;</span>&#125;).json()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 打印数据</span></span><br><span class="line"><span class="comment"># pprint(res)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 提取所有res[VAP4BFR16]下标为1,3,5,7,9,10的m3u8_url,mp4_url</span></span><br><span class="line"><span class="built_in">print</span>(XDict(res,<span class="string">&quot;/VAP4BFR16[::2]//[&#x27;m3u8_url&#x27;,&#x27;mp4_url&#x27;]&quot;</span>).edict())</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>注：当使用切片是选取对象必须是 <code>iterable</code></p>
+<hr>
+<p>其他问题请前往：<a target="_blank" rel="noopener" href="https://github.com/luxuncang/dtanys/issues">issues</a></p>
+
+                </div>
+                <footer class="kratos-entry-footer clearfix">
+                    <div class="post-like-donate text-center clearfix">
+                        <a class="read-more" href="/2021/07/25/dtanys%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/#more" title="dtanys使用技巧">继续阅读 <i class="fa fa-chevron-circle-right"></i></a>
+                    </div>
+                </footer>
+            </div>
+        </article>
+    
+
+    
+    
+        <article>
+            <div class="kratos-hentry kratos-post-inner clearfix index-post">
+                <div class="kratos-entry-thumb-new">
                     <a href="/2021/07/14/lupro/">
                         
                     </a>
@@ -404,7 +473,7 @@
                 
   <aside id="krw-categories" class="widget widget-kratos-categories clearfix">
     <h4 class="widget-title"><i class="fa fa-folder"></i>分类目录</h4>
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/">开源项目</a><span class="category-list-count">2</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/">开源项目</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%A1%B9%E7%9B%AE%E6%8A%80%E5%B7%A7/">项目技巧</a><span class="category-list-count">1</span></li></ul>
   </aside>
 
 
@@ -413,7 +482,7 @@
   <aside id="krw-tags" class="widget widget-kratos-tags clearfix">
     <h4 class="widget-title"><i class="fa fa-tags"></i>标签聚合</h4>
       <div class="tag-clouds">
-        <a href="/tags/python/" style="font-size: 0.8em;">python</a> <a href="/tags/%E7%88%AC%E8%99%AB%E6%A1%86%E6%9E%B6/" style="font-size: 0.6em;">爬虫框架</a> <a href="/tags/%E8%A7%A3%E6%9E%90%E5%99%A8/" style="font-size: 0.6em;">解析器</a>
+        <a href="/tags/python/" style="font-size: 0.8em;">python</a> <a href="/tags/%E7%88%AC%E8%99%AB%E6%A1%86%E6%9E%B6/" style="font-size: 0.6em;">爬虫框架</a> <a href="/tags/%E8%A7%A3%E6%9E%90%E5%99%A8/" style="font-size: 0.7em;">解析器</a>
       </div>
   </aside>
 
@@ -424,6 +493,12 @@
   <div class="tab-content">
       <ul class="list-group">
         
+        
+          
+          
+            <a class="list-group-item" href="/2021/07/25/dtanys%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/"><i class="fa  fa-book"></i> dtanys使用技巧</a>
+            
+          
         
           
           
